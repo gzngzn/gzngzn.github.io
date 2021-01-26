@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Domains</title>
+    <meta http-equiv="content-type" content="text/html;charset=windows-1251">
+    <meta charset="UTF-8">
+    <style>
+        body       {background: grey}
+  #myTBL td        {background: white; color: black}
+  #myTBLauto td    {background: white; color: black}
+  #myTBLautoLog td {background: white; color: black}
+
+    label {
+      display: block;
+    }
+
+    span {
+      color: #910a0a;
+      margin-left: 15px;
+    }       
+</style>
+</head>
+
+<body>
+    <h2>Поиск доменов матрицы:</h2>
+    <label for="nMatrix">Размерность <b>N</b> < 40 :</label>
+    <input type="nMatrix" name="n" id="nnMatrix" size="10" data-max="40" minlength="1" maxlength="2" placeholder="введите N" value="" autocomplete="false" oninput="validN()" /><span id="validN" value=''></span>
+    <label for="nMatrix">Размерность <b>M</b> < 40 :</label>
+    <input type="mMatrix" name="m" id="mmMatrix" size="10" data-max="40" minlength="1" maxlength="2" placeholder="введите M" value="" autocomplete="false" oninput="validM()" /><span id="validM" value=''></span>
+    <br></br>
+    <label>Вероятность заполнения <b>единицами</b> от 0,01 до 0,99 :</label>
+    <input type="randomAuto" name="n" id="randomAuto" size="10" data-max="40" minlength="2" maxlength="4" placeholder="введите Rnd" value="" autocomplete="false" oninput="validR();" /><span id="validRnd"></span>
+    <br></br>
+    <button name="send" id="autoMod" onclick='createTableAuto()' ;>Автоматический режим</button>
+    <input type="countOfDomain" value="0" id="countOfDomain" disabled=true style="width: 20px"> </input>
+    <br></br>
+    <button name="send" id="manMod" onclick='getTable(); createTableManual();'>Отобразить на странице пустую матрицу</button>
+    <button name="send" id="findDomain" onclick='findDomain()' ;>Посчитать домены</button>
+    <br></br>
+    <table id='myTBL' cellpadding="5" cellspacing="10" border="1"></table>
+    <table id='myTBLauto' cellpadding="5" cellspacing="10" border="1"></table>
+    <table id='myTBLautoLog' cellpadding="5" cellspacing="10" border="1"></table>
+    <script src="main.js"></script>
+</body>
+
+</html>
